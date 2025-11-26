@@ -117,9 +117,9 @@
         <div class="footer-links">
           <h4>Ayuda y Contacto</h4>
           <a href="#contacto">Contáctanos</a>
-          <a href="/documentos/preguntas.docx" target="_blank">FAQ - Preguntas Frecuentes</a>
-          <a href="/documentos/politica.docx" target="_blank">Política de Privacidad</a>
-          <a href="/documentos/terminos.docx" target="_blank">Términos y Condiciones</a>
+          <a href="/documentos/preguntas.pdf" target="_blank">FAQ - Preguntas Frecuentes</a>
+          <a href="/documentos/politica.pdf" target="_blank">Política de Privacidad</a>
+          <a href="/documentos/terminos.pdf" target="_blank">Términos y Condiciones</a>
         </div>
         <div class="footer-links3">
           <h4>Recomendaciones</h4>
@@ -141,23 +141,16 @@
     <script src="menu_toggle.js"></script>
     
     <script>
-        // Función para Cerrar Sesión
         function logout() {
-            // Confirmación opcional
             if(confirm("¿Estás seguro que deseas cerrar sesión?")) {
-                // Redirige a la página de login (portada.html)
                 window.location.href = "portada.html";
             }
         }
-
-        // Función para simular el registro sin errores
         function registrarUsuario(event) {
-            event.preventDefault(); // Detiene el envío real que causa el error 405
+            event.preventDefault(); 
             
-            // Aquí podrías validar campos si quisieras
             alert("¡Registro exitoso! Gracias por unirte a nuestra comunidad.");
             
-            // Opcional: Limpiar el formulario
             event.target.reset();
             return false;
         }
