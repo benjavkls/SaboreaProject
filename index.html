@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>ProjectBenja_Recetario</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/desayunodesig.css" /> 
+  </head>
+  <body>
+
+    <nav class="top-header">
+        <a href="index.html" class="logo">
+            <img height="50" width="50" src="imagenes/logo.ihc.jpg" alt="Logo" />
+        </a>
+        
+        <div class="menu-centrado-wrapper">
+            <button class="menu-toggle" aria-label="Abrir menú">
+                &#9776; 
+            </button>
+
+            <ul class="menu-horizontal">
+                <li><a href="#">Desayunos</a></li>
+                <li>
+                    <a href="#">Almuerzos</a>
+                    <ul class="menu-vertical">
+                        <li><a href="#">Alto en proteína</a></li>
+                        <li><a href="#">Bajo en grasas</a></li>
+                        <li><a href="#">Ensaladas</a></li>
+                        <li><a href="#">Mediterránea</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Cenas</a></li>
+                <li><a href="#contacto">Ayuda</a></li> 
+                
+                <li class="btn-cerrar-sesion"><a href="#" onclick="logout()">Cerrar Sesión</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="seccion-productos">
+        <div class="cont-gral-productos">
+            <div class="cont-prod-imagen">
+                <img src="imagenes/imagen.ihc2.jpg" alt="Productos" width="500">
+            </div>
+            <div class="cont-prod-texto">
+                <h1>Productos Saludables</h1>
+                <p>Descubre nuestra amplia gama de productos saludables...</p>
+                <a href="#productos" class="btn-ver-mas">Ver más</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="seccion-beneficios">
+        <div class="cont-gral-beneficios">
+            <div class="cont-benef-texto">
+                <h1>Beneficios para tu Salud</h1>
+                <p>Nuestras recetas no solo son deliciosas...</p>
+                <a href="#beneficios" class="btn-ver-mas">Conoce los beneficios</a>
+            </div>
+            <div class="cont-benef-video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/7OaJv5glJno?si=GX4syInEf0kc9nXb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="seccion-contacto" id="contacto">
+        <div class="contacto-container">
+            <h1 id="formulario">¡Contactanos y Recibe Contenido Exclusivo!</h1>
+            <p>Únete a nuestra comunidad y sé el primero en recibir las nuevas recetas.</p>
+            
+            <form onsubmit="return registrarUsuario(event)" class="formulario-registro">
+                
+                <div class="input-group-contacto">
+                    <label for="nombre">Nombre Completo</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                </div>
+
+                <div class="input-group-contacto">
+                    <label for="email-registro">Correo Electrónico</label>
+                    <input type="email" id="email-registro" name="email-registro" placeholder="Tu email" required>
+                </div>
+
+                <div class="input-group-contacto">
+                    <label for="genero">Género</label>
+                    <select id="genero" name="genero">
+                        <option value="" disabled selected>Selecciona tu género</option>
+                        <option value="femenino">Femenino</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="otro">Prefiero no decirlo</option>
+                    </select>
+                </div>
+
+                <div class="input-group-contacto">
+                    <label>Tus Preferencias:</label>
+                    <div class="opciones-preferencias">
+                        <label class="checkbox-label"><input type="checkbox" name="preferencias" value="desayunos"> Desayunos</label>
+                        <label class="checkbox-label"><input type="checkbox" name="preferencias" value="almuerzos"> Almuerzos</label>
+                        <label class="checkbox-label"><input type="checkbox" name="preferencias" value="cenas"> Cenas</label>
+                        <label class="checkbox-label"><input type="checkbox" name="preferencias" value="postres"> Postres</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-registro">Registrarme</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+        <div class="footer-brand">
+          <img src="imagenes/logo.ihc.jpg" alt="Logo Recetario" class="footer-logo" />
+          <p>Recetario - La cocina saludable</p>
+          <small>© 2024 Todos los derechos reservados</small>
+        </div>
+        <div class="footer-links">
+          <h4>Ayuda y Contacto</h4>
+          <a href="#contacto">Contáctanos</a>
+          <a href="/documentos/preguntas.docx" target="_blank">FAQ - Preguntas Frecuentes</a>
+          <a href="/documentos/politica.docx" target="_blank">Política de Privacidad</a>
+          <a href="/documentos/terminos.docx" target="_blank">Términos y Condiciones</a>
+        </div>
+        <div class="footer-links3">
+          <h4>Recomendaciones</h4>
+          <a href="#" target="_blank">Recetas rápidas</a>
+          <a href="#" target="_blank">Consejos de cocina</a>
+          <a href="#" target="_blank">Tips de alimentación saludable</a>
+          <a href="#" target="_blank">Página Oficial de Recetario</a>
+        </div>
+        <div class="footer-social">
+          <h4>Síguenos</h4>
+          <a href="https://www.facebook.com/recetas" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook" class="social-icon" /></a>
+          <a href="https://www.instagram.com/" target="_blank"><img src="https://www.pngmart.com/files/13/Instagram-Logo-PNG-Image-1.png" alt="Instagram" class="social-icon" /></a>
+          <a href="https://pe.linkedin.com/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" class="social-icon" /></a>
+          <a href="https://twitter.com/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/145/145812.png" alt="Twitter" class="social-icon" /></a>  
+        </div>
+      </div>
+    </footer>
+
+    <script src="menu_toggle.js"></script>
+    
+    <script>
+        // Función para Cerrar Sesión
+        function logout() {
+            // Confirmación opcional
+            if(confirm("¿Estás seguro que deseas cerrar sesión?")) {
+                // Redirige a la página de login (portada.html)
+                window.location.href = "portada.html";
+            }
+        }
+
+        // Función para simular el registro sin errores
+        function registrarUsuario(event) {
+            event.preventDefault(); // Detiene el envío real que causa el error 405
+            
+            // Aquí podrías validar campos si quisieras
+            alert("¡Registro exitoso! Gracias por unirte a nuestra comunidad.");
+            
+            // Opcional: Limpiar el formulario
+            event.target.reset();
+            return false;
+        }
+    </script>
+    
+  </body>
+</html>

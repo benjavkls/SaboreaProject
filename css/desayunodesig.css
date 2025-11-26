@@ -1,0 +1,108 @@
+/* Contenedor principal de la página de desayunos */
+.desayunos-main {
+  background-color: #bdf3b8;           /* Un verde claro de fondo */
+  min-height: calc(100vh - 80px);      /* Ocupa toda la altura menos el header fijo */
+  padding: 40px 0 60px;
+}
+
+.desayunos-hero {
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  padding: 0 40px;
+  color: #08642c;
+}
+
+.desayunos-hero h1 {
+  margin: 0 0 10px;
+  font-size: 2rem;
+}
+
+.desayunos-hero p {
+  margin: 0;
+}
+
+/* Contenedor de la galería de videos (flexible) */
+.desayunos-videos {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* Tarjeta de cada video */
+.video-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  flex: 1 1 320px; /* Tamaño base de la tarjeta */
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Frame del video */
+.video-frame {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Mantiene la proporción de video estándar */
+}
+
+.video-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Contenido de texto debajo del video */
+.video-content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Ocupa el espacio restante */
+}
+
+.video-content h3 {
+  margin-top: 0;
+  color: #08642c;
+  font-size: 1.25rem;
+}
+
+.video-content p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+/* Botón de ver receta */
+.btn-ver-receta {
+    display: inline-block;
+    background-color: #1db954; 
+    color: white;
+    padding: 0.6rem 1rem;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-align: center;
+    transition: background-color 0.3s;
+    margin-top: auto; /* Empuja el botón al final de la tarjeta */
+}
+
+.btn-ver-receta:hover {
+    background-color: #08642c;
+}
+
+/* MEDIA QUERY para que en pantallas pequeñas los videos se apilen */
+@media (max-width: 768px) {
+    .desayunos-videos {
+        padding: 0 20px;
+    }
+
+    .video-card {
+        flex: 1 1 100%; /* Ocupa todo el ancho disponible */
+        max-width: 100%;
+    }
+}

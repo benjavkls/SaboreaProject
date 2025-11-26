@@ -1,0 +1,116 @@
+/* Estilos globales y reset */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Fira Sans Condensed', Arial, Helvetica, sans-serif;
+}
+
+/* Contenedor principal para la vista de login (toda la pantalla) */
+.hero {
+  min-height: 100vh;                       /* Ocupa toda la altura de la vista */
+  width: 100%;
+  background-image: url("../imagenes/Portada.jpg"); /* Reemplazar con la ruta correcta de tu imagen */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;                               /* Centrar el contenido de login */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* Capa oscura (Overlay) sobre la imagen de fondo */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;                                    /* Cubre todo el área del 'hero' */
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* La caja del formulario de login (la tarjeta blanca) */
+.login-box {
+    position: relative; 
+    z-index: 5; /* Asegura que esté sobre la capa oscura (::after) */
+    /* Estilos estéticos para diferenciarse del fondo */
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    width: 90%;
+}
+
+.login-box h2 {
+    color: #1db954; /* Color verde */
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+/* Enlace de "Regístrate aquí" */
+.link-registro {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.link-registro a {
+    color: #1db954;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.link-registro a:hover {
+    color: #08642c;
+}
+
+
+/* -------------------------------------- */
+/* MEDIA QUERY: AJUSTE PARA MÓVILES (Estilo App) */
+/* -------------------------------------- */
+@media (max-width: 600px) {
+    /* El fondo 'hero' pierde su altura mínima, permitiendo que el contenido fluya */
+    .hero.login-container-full {
+        min-height: auto;
+        padding: 40px 10px;
+        align-items: flex-start; /* Mueve el formulario al inicio de la vista */
+    }
+    
+    /* La caja de login pierde los adornos para parecer una vista de app */
+    .login-box {
+        padding: 2rem 1.5rem;
+        box-shadow: none;
+        border-radius: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+/* -------------------------------------- */
+/* PISTA DE CLAVE (DECORADITO) */
+/* -------------------------------------- */
+.clave-pista {
+    margin-top: 1.5rem; /* Espacio arriba */
+    padding: 0.75rem; /* Relleno */
+    background-color: #e8f5e9; /* Un verde muy claro (similar a un warning suave) */
+    border: 1px solid #a5d6a7; /* Borde verde más oscuro */
+    border-radius: 8px; /* Bordes redondeados */
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.clave-pista p {
+    margin: 0; /* Quitar margen por defecto del párrafo */
+    color: #08642c; /* Color de texto verde oscuro para contraste */
+    font-weight: 500; /* Un poco más de grosor */
+}

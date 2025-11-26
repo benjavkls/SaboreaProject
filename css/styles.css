@@ -1,0 +1,426 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Fira Sans Condensed', Arial, Helvetica, sans-serif;
+  margin-top: 80px; 
+}
+
+/* ================= HEADER Y MENÚ (FIXED) ================= */
+
+.top-header {
+  background-color: #62ce47;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo img {
+  width: 50px;
+  height: auto;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.menu-centrado-wrapper {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-horizontal {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 80px; /* Separación balanceada */
+  align-items: center;
+}
+
+.menu-horizontal li {
+  position: relative;
+}
+
+.menu-horizontal li a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.menu-horizontal li:hover > a {
+  background-color: #51a83b;
+}
+
+.menu-vertical {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  list-style: none;
+  width: 200px;
+  background-color: #51a83b;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 0;
+  margin: 0;
+  z-index: 999;
+  border-radius: 0 0 8px 8px;
+}
+
+.menu-horizontal li:hover .menu-vertical {
+  display: block;
+}
+
+.menu-vertical li a {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 0;
+}
+
+.menu-vertical li a:hover {
+  background-color: #449232;
+}
+
+
+/* ================= SECCIONES GENERALES ================= */
+
+.seccion-productos, .seccion-beneficios, .seccion-contacto {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cont-gral-productos, .cont-gral-beneficios {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.cont-prod-imagen, .cont-benef-video {
+  flex: 1;
+}
+
+.cont-prod-imagen img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cont-prod-texto, .cont-benef-texto {
+  flex: 1;
+}
+
+.cont-benef-video iframe {
+  width: 100%;
+  min-height: 315px;
+  border-radius: 10px;
+}
+
+.btn-ver-mas, .btn-registro {
+  display: inline-block;
+  background-color: #62ce47;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 15px;
+  transition: background-color 0.3s;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-ver-mas:hover, .btn-registro:hover {
+  background-color: #51a83b;
+}
+
+.seccion-beneficios {
+  background-color: #f7fff7;
+}
+
+/* ================= SECCIÓN CONTACTO (FORMULARIO) ================= */
+
+.seccion-contacto {
+  background-color: #e9fbe9;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+
+.contacto-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.seccion-contacto h1 {
+  color: #08642c;
+  margin-bottom: 10px;
+}
+
+.formulario-registro {
+  margin-top: 30px;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: left; /* Alinea los labels a la izquierda */
+}
+
+.input-group-contacto {
+  margin-bottom: 20px;
+}
+
+.input-group-contacto label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600; /* Un poco más grueso */
+  color: #333;
+}
+
+/* Estilo para Inputs de Texto y Selectores */
+.input-group-contacto input[type="text"],
+.input-group-contacto input[type="email"],
+.input-group-contacto select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-family: inherit; /* Mantiene la fuente Fira Sans */
+  font-size: 1rem;
+  background-color: white;
+}
+
+/* Estilo para el grupo de Checkboxes (Preferencias) */
+.opciones-preferencias {
+  display: flex;
+  flex-wrap: wrap; /* Si no caben, bajan a la sig. línea */
+  gap: 15px;
+  margin-top: 5px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: normal !important; /* Quita la negrita del label principal */
+  cursor: pointer;
+}
+
+.btn-registro {
+  width: 100%; /* Botón ancho completo */
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+
+/* ================= FOOTER ================= */
+
+.main-footer {
+  background-color: #333;
+  color: #fff;
+  padding: 2rem 1rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  gap: 2rem;
+}
+
+.footer-brand {
+  flex: 1 1 200px;
+  max-width: 300px;
+}
+
+.footer-logo {
+  width: 60px;
+  height: auto;
+  margin-bottom: 0.5rem;
+  border-radius: 50%;
+}
+
+.footer-links, .footer-links3 {
+  flex: 1 1 200px;
+}
+
+.footer-links a, .footer-links3 a {
+  display: block;
+  color: #ddd;
+  text-decoration: none;
+  margin: 0.3rem 0;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover, .footer-links3 a:hover {
+  color: #62ce47;
+}
+
+.footer-social {
+  flex: 1 1 150px;
+}
+
+.footer-social h4 {
+  margin-bottom: 1rem;
+}
+
+.footer-social a {
+  margin-right: 10px;
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 0.5rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+/* ================= RESPONSIVE (MÓVIL) ================= */
+
+
+@media (max-width: 768px) {
+  
+  .menu-toggle {
+    display: block; /* Muestra hamburguesa */
+  }
+
+  /* Ajuste del wrapper en móvil */
+  .menu-centrado-wrapper {
+    justify-content: flex-end; 
+  }
+
+  /* Menú desplegable móvil */
+  .menu-horizontal {
+    display: none; 
+    flex-direction: column;
+    width: 100%;
+    background-color: #62ce47;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    z-index: 998;
+    gap: 0; 
+  }
+
+  .menu-horizontal.active {
+    display: flex; 
+  }
+
+  .menu-horizontal li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #51a83b;
+  }
+  
+  .menu-horizontal li a {
+    padding: 15px;
+  }
+
+  .menu-vertical {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    background-color: #51a83b;
+  }
+  
+  .menu-vertical li a {
+    padding-left: 40px;
+  }
+  
+  /* --- CORRECCIONES DE ALINEACIÓN (FOOTER Y SECCIONES) --- */
+  
+  .cont-gral-productos,
+  .cont-gral-beneficios,
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    align-items: center; /* Asegura el centrado del eje cruzado */
+  }
+
+  /* 🔥 FIX PARA EL FOOTER "CHUECO" */
+  .footer-brand, 
+  .footer-links, 
+  .footer-links3, 
+  .footer-social {
+    width: 100%; /* Fuerza a que ocupen todo el ancho para centrar bien */
+    max-width: 100%;
+    margin-bottom: 1.5rem; /* Espacio uniforme entre bloques */
+  }
+  
+  /* Ajuste para que los links del footer no se vean raros */
+  .footer-links a, .footer-links3 a {
+    display: block;
+    width: 100%;
+  }
+
+  /* Centrar iconos sociales */
+  .footer-social a {
+      display: inline-block;
+      margin: 0 10px;
+  }
+
+  .cont-prod-imagen, .cont-benef-video {
+    margin-top: 20px;
+  }
+}
+
+/* ================= BOTÓN CERRAR SESIÓN ROJO ================= */
+
+/* Estilo general para el botón de Cerrar Sesión (escritorio y móvil) */
+.btn-cerrar-sesion a {
+  background-color: #dc3545 !important; /* Rojo intenso para el botón */
+  color: white !important; /* Asegura que el texto sea blanco */
+  font-weight: 600 !important; /* Haz el texto un poco más grueso */
+  padding: 10px 15px !important; /* Ajusta el relleno */
+  border-radius: 5px !important; /* Bordes redondeados */
+}
+
+/* Efecto hover (al pasar el ratón) para el botón rojo */
+.btn-cerrar-sesion a:hover {
+  background-color: #c82333 !important; /* Rojo más oscuro al pasar el ratón */
+  /* Opcional: una pequeña elevación */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+/* Asegurar que en móvil se vea bien y no tenga el borde inferior del menú */
+@media (max-width: 768px) {
+    .menu-horizontal li.btn-cerrar-sesion {
+        border-bottom: none; /* Quita el separador verde si lo tiene */
+    }
+}
